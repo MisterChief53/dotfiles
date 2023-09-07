@@ -37,3 +37,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Org-mode configuration
+(setq org-agenda-files '("~/Documents/notes")) ;; Add notes to agenda files
+
+;; Chezmoi package for chezmoi integration
+(use-package chezmoi)

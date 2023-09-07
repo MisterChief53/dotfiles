@@ -1,3 +1,12 @@
+;; Tell customize to never write to this file
+(setq custom-file "~/.config/emacs/custom.el")
+(unless (file-exists-p custom-file)
+  (with-temp-buffer
+    (write-file custom-file)))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+(message "loading init.el")
 ;; Add the sources
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -25,18 +34,6 @@
 
 ;; Eglot auto start on mode
 (add-hook 'c++-mode-hook 'eglot-ensure)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(company auto-package-update)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; Org-mode configuration
 (setq org-agenda-files '("~/Documents/notes")) ;; Add notes to agenda files

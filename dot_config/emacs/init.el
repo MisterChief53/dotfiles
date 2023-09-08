@@ -43,3 +43,6 @@
 
 ;; Chezmoi package for chezmoi integration
 (use-package chezmoi)
+
+;; Enable line wrap
+(global-visual-line-mode t)

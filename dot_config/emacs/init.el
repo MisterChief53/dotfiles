@@ -37,6 +37,9 @@
 
 ;; Org-mode configuration
 (setq org-agenda-files '("~/Documents/notes")) ;; Add notes to agenda files
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 ;; Chezmoi package for chezmoi integration
 (use-package chezmoi)
